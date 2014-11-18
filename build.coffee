@@ -8,9 +8,11 @@ chalk = require('chalk')
 # https://github.com/ttscoff/ubersicht-widgets.git
 # https://github.com/Pe8er/uWidgets-Distribution.git
 # https://github.com/dalemanthei/uebersicht-widgets.git
+# https://github.com/mortensieker/ubersicht.git
 
 repos = ['uebersicht-widgets', 'ttscoff-uebersicht-widgets',
-        'Pe8er-uebersicht-widgets', 'dalemanthei-uebersicht-widgets']
+        'Pe8er-uebersicht-widgets', 'dalemanthei-uebersicht-widgets',
+        'mortensieker-uebersicht']
 
 noUpdate = process.argv[2] == "-q"
 
