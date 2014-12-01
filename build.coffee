@@ -12,7 +12,7 @@ chalk = require('chalk')
 
 repos = ['uebersicht-widgets', 'ttscoff-uebersicht-widgets',
         'Pe8er-uebersicht-widgets', 'dalemanthei-uebersicht-widgets',
-        'mortensieker-uebersicht']
+        'mortensieker-uebersicht-widgets']
 
 noUpdate = process.argv[2] == "-q"
 

@@ -1,0 +1,19 @@
+[submodule "website"]
+	path = website
+	url = git@github.com:felixhageloh/uebersicht-widgets.git
+	branch = gh-pages
+[submodule "uebersicht-widgets"]
+	path = uebersicht-widgets
+	url = git@github.com:felixhageloh/uebersicht-widgets.git
+[submodule "Pe8er-uebersicht-widgets"]
+	path = Pe8er-uebersicht-widgets
+	url = https://github.com/Pe8er/uWidgets-Distribution.git
+[submodule "dalemanthei-uebersicht-widgets"]
+	path = dalemanthei-uebersicht-widgets
+	url = https://github.com/dalemanthei/uebersicht-widgets.git
+[submodule "mortensieker-uebersicht-widgets"]
+	path = mortensieker-uebersicht-widgets
+	url = https://github.com/mortensieker/ubersicht.git
+[submodule "ttscoff-uebersicht-widgets"]
+	path = ttscoff-uebersicht-widgets
+	url = https://github.com/ttscoff/ubersicht-widgets.git
