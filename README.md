@@ -40,9 +40,9 @@ The next step is to execute the build script
 
 It will give some output on which widets are added and if something went wrong. It should give a quite clear indication what is missing in case the new widget breaks (widget.json file is broken, no screenshpt found etc.)
 
-In case everything goes fine, the next step is to copy the newly created widget.json file to the website:
+In case everything goes fine, the next step is to copy the newly created widgets.json file to the website:
 
-    mv widget.json website/
+    mv widgets.json website/
     cd website
     git add widget.json
     git commit -m 'Added <name of widget>'
@@ -59,7 +59,7 @@ After you deployed the site, make sure to also push the changes to the widget re
     cd uebersicht-widgets
     git push
 
-On the other hand, if something goes wrong (build script fails), just disgard the widget.json file and undo adding the submodule:
+On the other hand, if something goes wrong (build script fails), just disgard the widgets.json file and undo adding the submodule:
 
     cd uebersicht-widgets
     git reset --hard HEAD~1
