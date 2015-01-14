@@ -59,7 +59,7 @@ getAndWriteWidgets = (dirTree, repo, widgetJSON, callback) ->
 buildWidget = (entry, repo, callback) ->
   manifest = null
   modDate  = null
-  urls     = null
+  repoInfo = null
   widgetId = entry.path
 
   root = path = sha = null
@@ -86,16 +86,18 @@ buildWidget = (entry, repo, callback) ->
     callback()
 
   combineData = ->
-    return unless manifest and modDate and urls
+    return unless manifest and modDate and repoInfo
 
     callback
       id            : widgetId
       name          : manifest.name
       author        : manifest.author
+      user          : repoInfo.user
+      repo          : repoInfo.name
       description   : manifest.description
-      screenshotUrl : urls.screenshotUrl
-      downloadUrl   : urls.downloadUrl
-      repoUrl       : if isSubmodule then urls.repoUrl else ghFolderUrl(urls.repoUrl, path)
+      screenshotUrl : repoInfo.screenshotUrl
+      downloadUrl   : repoInfo.downloadUrl
+      repoUrl       : if isSubmodule then repoInfo.repoUrl else ghFolderUrl(repoInfo.repoUrl, path)
       modifiedAt    : modDate
 
   getTree sha, cwd: root, (widgetDir) ->
@@ -108,7 +110,9 @@ buildWidget = (entry, repo, callback) ->
 
     getUserRepo cwd: root, (user, repo) ->
       return bail "could not retrieve repo info" unless user and repo
-      urls =
+      repoInfo =
+        user         : user
+        name         : repo
         downloadUrl  : ghRawUrl user, repo, "#{path}/#{paths.zipPath}"
         screenshotUrl: ghRawUrl user, repo, "#{path}/#{paths.screenshotPath}"
         repoUrl      : ghUrl user, repo
