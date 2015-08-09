@@ -123,8 +123,8 @@ buildWidget = (entry, repo, callback) ->
       modDate = date
       combineData()
 
-    getManifest "#{path}/#{paths.manifestPath}", cwd: root, (man) ->
-      return bail "could not read manifest" unless man
+    getManifest "#{path}/#{paths.manifestPath}", cwd: root, (err, man) ->
+      return bail "could not read manifest: #{err}" if err or !man
       manifest = man
       combineData()
 
@@ -144,7 +144,11 @@ parseWidgetDir = (dirTree, dirPath) ->
 getManifest = (path, options, callback) ->
   fs.readFile "#{options.cwd}/#{path}", (err, contents) ->
     bail(err) if err
-    callback JSON.parse(contents ? 'null')
+    try
+      data = JSON.parse(contents ? 'null')
+      callback null, data
+    catch err
+      callback(err.message)
 
   # saveExec "git show master:#{path}", options, (contents) ->
   #   callback JSON.parse(contents ? 'null')
