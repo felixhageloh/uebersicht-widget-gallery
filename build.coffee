@@ -137,7 +137,9 @@ parseWidgetDir = (dirTree, dirPath) ->
     else if /screenshot/i.test(entry.path)
       paths.screenshotPath = entry.path
     else if entry.path.indexOf('widget.zip') > -1
-      paths.zipPath  = entry.path
+      paths.zipPath = entry.path
+    else if entry.path.indexOf('.zip') > -1
+      paths.zipPath ?= entry.path
 
   paths
 
