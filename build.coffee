@@ -11,8 +11,7 @@ chalk = require('chalk')
 # https://github.com/mortensieker/ubersicht.git
 
 repos = ['uebersicht-widgets', 'ttscoff-uebersicht-widgets',
-        'Pe8er-uebersicht-widgets', 'dalemanthei-uebersicht-widgets',
-        'mortensieker-uebersicht-widgets']
+  'dalemanthei-uebersicht-widgets', 'mortensieker-uebersicht-widgets']
 
 noUpdate = process.argv[2] == "-q"
 
