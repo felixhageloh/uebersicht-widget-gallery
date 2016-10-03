@@ -135,7 +135,7 @@ parseWidgetDir = (dirTree, dirPath) ->
       paths.manifestPath = entry.path
     else if entry.path.indexOf('.json') > -1
       paths.manifestPath = entry.path
-    else if /screenshot/i.test(entry.path)
+    else if /screenshot\./i.test(entry.path)
       paths.screenshotPath = entry.path
     else if entry.path.indexOf('widget.zip') > -1
       paths.zipPath = entry.path
